@@ -5,7 +5,7 @@ var exphbs     = require('express-handlebars');
 var bodyParser = require('body-parser');
 var routes     = require('./routes.js');
 
-var port       = 3000;
+var port       = 8080;
 var server     = express();
 
 server.use(bodyParser.json())
