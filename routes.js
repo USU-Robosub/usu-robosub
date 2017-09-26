@@ -8,7 +8,7 @@ var ContactUsController     = require("./Controls/ContactUs.js");
 
 module.exports = function(app) {
     app.get('/', function(request, response) {
-        response.render('index', {
+        response.render('index.hbs', {
             // page params
         });
     });
