@@ -14,10 +14,10 @@ server.use(express.static(__dirname + '/Static'));
 server.engine('.hbs', exphbs({
   defaultLayout: 'main',
   extname: '.hbs',
-  layoutsDir: path.join(__dirname, 'Views/layouts')
+  layoutsDir: path.join(__dirname, 'views/layouts')
 }));
 server.set('view engine', '.hbs');
-server.set('Views', path.join(__dirname, 'Views'));
+server.set('views', path.join(__dirname + '/views'));
 
 routes(server);
 
