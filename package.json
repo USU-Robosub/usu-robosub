@@ -1,0 +1,27 @@
+{
+  "name": "Utah_State_RoboSub_Team_Website",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Team website for information, teams, projects, research, etc.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "forever": "pm2 start index.js -n 'UsubWeb'",
+    "stop": "pm2 delete UsubWeb"
+  },
+  "keywords": [],
+  "author": "TekuConcept",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "extfs": "0.0.7",
+    "jquery-deferred": "^0.3.1",
+    "mocha": "^3.4.1",
+    "node-watch": "^0.5.5",
+    "websocket": "^1.0.24"
+  }
+}
