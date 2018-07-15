@@ -1,1 +1,0 @@
-function galleryspin(e){spinner=document.querySelector("#spinner"),e?angle-=amount:angle+=amount,spinner.setAttribute("style"," -webkit-transform: rotateY("+angle+"deg); -moz-transform: rotateY("+angle+"deg); transform: rotateY("+angle+"deg); ")}var angle=0,amount=90;

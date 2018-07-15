@@ -1,0 +1,12 @@
+<div class="tab-content sponsors_content {% if {{startActive}} == true %} is-active {%endif%}">
+
+  <div class="container">
+    <h1 class="title has-text-centered">USU Robosub thanks the following sponsors for their support</h1>
+  </div>
+
+  {% for sponsor in page.sponsors %}
+    <figure class="image">
+      <img src="{{sponsor.imageURL}}">
+    </figure>
+  {% endfor %}
+</div>
