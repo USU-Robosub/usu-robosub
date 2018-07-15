@@ -1,0 +1,12 @@
+1. install ruby (latest, 5.0.2 I think?)
+2. when terminal pops up, press enter for everything.
+3. open up a terminal
+4. gem install jekyll
+5. gem uninstall eventmachine
+6. gem install eventmachine --platform ruby (this will take a while)
+
+to start the server, run this at the root. (robosub_site)
+  jekyll serve --livereload --host 0.0.0.0
+
+Command to compress images with imagemagick
+convert -strip -interlace Plane -resize 640x640 -gaussian-blur 0.05 -quality 60% "v6.v 3.2 render.JPG" "compressed/v6.v 3.2 render.jpg"

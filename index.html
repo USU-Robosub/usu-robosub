@@ -1,1 +1,171 @@
-USU RoboSub Team
+---
+teams:
+  - id: 0
+    name: "Software Team"
+  - id: 1
+    name: "Mechanical Team"
+  - id: 2
+    name: "Electrical Team"
+
+teamMembers:
+  - name: "Nathan Copier"
+    team: 0
+  - name: "Taylor Jones"
+    team: 0
+  - name: Konnor Andrews
+    team: 0
+  - name: "Marcos Jones"
+    team: 0
+
+  - name: "Jacie Grow"
+    team: 1
+  - name: "Reed Thurber"
+    team: 1
+  - name: "James Parberry"
+    team: 1
+  - name: "William Clarke"
+    team: 1
+  - name: "Braden Foard"
+    team: 1
+
+  - name: "Bryant Casutt"
+    team: 2
+  - name: "Henry Riker"
+    team: 2
+  - name: "Cody Hardy"
+    team: 2
+  - name: "Craig Simpson"
+    team: 2
+  - name: "Rachel Wall"
+    team: 2
+
+sponsors:
+  - name: "SDL"
+    title: "Space Dynamics Lab"
+    imageURL: "https://i.imgur.com/hIhvV7Q.png"
+    link: "http://www.spacedynamics.org/"
+  - name: "CS"
+    title: "USU Computer Science"
+    imageURL: "https://i.imgur.com/A08iZyt.png"
+    link: "http://www.cs.usu.edu/"
+  - name: "MAE"
+    title: "USU Mechanical and Aerospace Engineering"
+    imageURL: "https://i.imgur.com/A6I1Y4P.png"
+    link: "http://www.mae.usu.edu/"
+  - name: "ECE"
+    title: "USU Electrical and Computer Engineering"
+    imageURL: "https://i.imgur.com/8em1M4u.png"
+    link: "https://ece.usu.edu/"
+
+tabs:
+  - name: "home"
+    source: "home_content"
+    startActive: true
+  - name: "teams"
+    source: "teams_content"
+  - name: "media"
+    source: "media_content"
+  - name: "sponsors"
+    source: "sponsors_content"
+  - name: "contact"
+    title: "find us"
+    source: "contact_content"
+
+tabSources:
+  - name: "home_content.html"
+    startActive: true
+  - name: "teams_content.html"
+  - name: "media_content.html"
+  - name: "sponsors_content.html"
+  - name: "contact_content.html"
+
+tabsMeta:
+  browserTabTag: " | Utah State Robosub"
+
+---
+
+{% capture header_main %}
+  <div class="tabs is-centered navigation is-fixed-top is-uppercase is-marginless">
+    <ul>
+      {% for tab in page.tabs %}
+        <li {% if tab.startActive %} class="is-active" {% endif %}>
+          <a data-tabsource="{{ tab.source }}">
+            {% if tab.title %}
+              {{ tab.title }}
+            {% else %}
+              {{ tab.name }}
+            {% endif %}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endcapture %}
+
+{% capture footer_main %}
+  <footer class="footer">
+    <nav class="level">
+      <div class="level-left">
+        <span>Made with</span>
+        <span class="icon has-text-danger">
+            <i class="fas fa-heart"></i>
+        </span>
+        <span>by Utah State University 2012-2018</span>
+        <span class="icon">
+            <i class="far fa-copyright"></i>
+        </span>
+      </div>
+      <div class="level-right">
+        <div class="level-item">
+          <div class="social">
+            <a href="https://www.facebook.com/Utah-State-RoboSub-Team-1675735912640675/">
+              <span class="icon is-medium">
+                <i class="fab fa-lg fa-facebook-f"></i>
+              </span>
+            </a>
+            <a href="https://plus.google.com/106329287936772554934/posts">
+              <span class="icon is-medium">
+                <i class="fab fa-lg fa-google-plus-g"></i>
+              </span>
+            </a>
+            <a href="https://usurobosubteam.slack.com/">
+              <span class="icon is-medium">
+                <i class="fab fa-lg fa-slack-hash"></i>
+              </span>
+            </a>
+            <a href="https://github.com/USU-Robosub">
+              <span class="icon is-medium">
+                <i class="fab fa-lg fa-github"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </footer>
+{% endcapture %}
+
+{% capture content_main %}
+<div class="main-content">
+
+  {% for source in page.tabSources %}
+    {% assign startActive = source.startActive %}
+    {% include {{ source.name }} %}
+  {% endfor %}
+
+  {{ footer_main }}
+</div>
+{% endcapture %}
+
+
+<link rel="stylesheet" href="/css/master.css">
+
+<body>
+  <div class="main insert-padding-for-fixed-tabs">
+    {{ header_main }}
+
+    {{ content_main }}
+  </div>
+</body>
+
+<script type="text/javascript" src="js/master.js"></script>
