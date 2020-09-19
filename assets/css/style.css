@@ -435,3 +435,8 @@ section {
 #footer .credits {
   font-size: 13px;
 }
+
+.body_link {
+	color: #2a2c39;
+	text-decoration: underline;
+}
